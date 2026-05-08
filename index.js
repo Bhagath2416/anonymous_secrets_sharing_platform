@@ -107,6 +107,7 @@ app.get(
 app.get(
   "/auth/google/secrets",
   passport.authenticate("google", {
+    scope: ["profile", "email"],
     successRedirect: "/secrets",
     failureRedirect: "/login",
   })
